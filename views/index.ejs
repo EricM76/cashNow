@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CashNow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>CashNow</h1>
+    <p>Welcome to CashNow</p>
+
+    <form action="/apis/valores" method="POST">
+      <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="montoOrigen" name="montoOrigen" value=<%= typeof old != 'undefined' ? old.montoOrigen : null%> >
+            <label for="montoOrigen">Envias...</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select" id="metodoOrigen" aria-label="Floating label select example" name="origen">
+              <% metodos.forEach(metodo => { %>
+                <option value="<%= metodo.id %> " <%= typeof old != 'undefined' && old.metodoOrigen == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
+              <% }) %>
+            </select>
+            <label for="metodoOrigen">Método</label>
+          </div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="montoDestino" name="montoDestino" value=<%= typeof montoDestino != 'undefined' ? montoDestino : null %> >
+            <label for="montoDestino">Recibís...</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select" id="metodoDestino" aria-label="Floating label select example" name="destino">
+              <% metodos.forEach(metodo => { %>
+                <option value="<%= metodo.id %> " <%= typeof old != 'undefined' && old.metodoDestino == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
+              <% }) %>
+            </select>
+            <label for="metodoDestino">Método</label>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>
