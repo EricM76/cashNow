@@ -2,14 +2,8 @@
 
 const methods = [
   {
-    name : 'transPesosArg',
+    name : 'transferencia bancaria',
     currency: 1,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'cuentaDigital',
-    currency : 1,
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -50,44 +44,8 @@ const methods = [
     updatedAt : new Date
   },
   {
-    name : 'dai',
-    currency : 2,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'tether',
-    currency : 2,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
     name : 'transfEuros',
     currency : 3,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'tranferWise',
-    currency : 3,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'advCash',
-    currency : 4,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'uphold',
-    currency : 4,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'neteller',
-    currency : 4,
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -96,25 +54,7 @@ const methods = [
     currency : 4,
     createdAt : new Date,
     updatedAt : new Date
-  },
-  {
-    name : 'payEer',
-    currency : 4,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'perfectMoney',
-    currency : 4,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'Skrill',
-    currency : 4,
-    createdAt : new Date,
-    updatedAt : new Date
-  },
+  }
   ]
 
 module.exports = {

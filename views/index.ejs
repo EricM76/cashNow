@@ -6,11 +6,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>CashNow</h1>
+    <h1><a href="/">CashNow</a> </h1>
     <p>Welcome to CashNow</p>
 
-    <form action="/apis/valores" method="POST">
-      <div class="row g-2">
+    <form action="/valores" method="POST">
+      <div class="row g-2 my-3">
         <div class="col-md">
           <div class="form-floating">
             <input type="number" class="form-control" id="montoOrigen" name="montoOrigen" value=<%= typeof old != 'undefined' ? old.montoOrigen : null%> >
@@ -21,7 +21,7 @@
           <div class="form-floating">
             <select class="form-select" id="metodoOrigen" aria-label="Floating label select example" name="origen">
               <% metodos.forEach(metodo => { %>
-                <option value="<%= metodo.id %> " <%= typeof old != 'undefined' && old.metodoOrigen == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
+                <option value="<%= metodo.id %>"><%= metodo.name %> </option>
               <% }) %>
             </select>
             <label for="metodoOrigen">Método</label>
@@ -31,7 +31,7 @@
       <div class="row g-2">
         <div class="col-md">
           <div class="form-floating">
-            <input type="number" class="form-control" id="montoDestino" name="montoDestino" value=<%= typeof montoDestino != 'undefined' ? montoDestino : null %> >
+            <input type="number" class="form-control" id="montoDestino" name="montoDestino" step="0.01" min=0>
             <label for="montoDestino">Recibís...</label>
           </div>
         </div>
@@ -39,11 +39,12 @@
           <div class="form-floating">
             <select class="form-select" id="metodoDestino" aria-label="Floating label select example" name="destino">
               <% metodos.forEach(metodo => { %>
-                <option value="<%= metodo.id %> " <%= typeof old != 'undefined' && old.metodoDestino == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
+                <option value="<%= metodo.id %>" <%= typeof old != 'undefined' && old.destino == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
               <% }) %>
             </select>
             <label for="metodoDestino">Método</label>
           </div>
+          <span class="text-danger" id="msgError"></span>
         </div>
       </div>
     </form>

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   Transaction.init({
     source: DataTypes.INTEGER,
     target: DataTypes.INTEGER,
-    perception: DataTypes.INTEGER
+    perception: DataTypes.DECIMAL
   }, {
     sequelize,
     modelName: 'Transaction',

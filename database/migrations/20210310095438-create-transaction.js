@@ -27,7 +27,7 @@ module.exports = {
         }
       },
       perception: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL(3,1)
       },
       createdAt: {
         allowNull: false,

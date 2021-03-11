@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-const {index, valores} = require('../controllers/indexController');
+const {index} = require('../controllers/indexController');
+const {getValor} = require('../controllers/apiController');
 
 
 /* GET home page. */
 router.get('/', index);
-router.post('/apis/valores',valores)
+router.post('/apis/valor',getValor);
 
 module.exports = router;
