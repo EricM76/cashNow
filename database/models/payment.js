@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Payment.init({
     name: DataTypes.STRING,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    label : DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Payment',
