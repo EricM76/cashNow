@@ -1,7 +1,7 @@
 'use strict';
 const faker = require('faker');
 
-let methods = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let methods = [1, 2, 3, 4, 5, 6, 7];
 
 let transactions = [];
 

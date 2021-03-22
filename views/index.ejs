@@ -6,50 +6,103 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><a href="/">CashNow</a> </h1>
-    <p>Welcome to CashNow</p>
-
-    <form action="/valores" method="POST">
-      <div class="row g-2 my-3">
-        <div class="col-md">
-          <div class="form-floating">
-            <input type="number" class="form-control" id="montoOrigen" name="montoOrigen" value=<%= typeof old != 'undefined' ? old.montoOrigen : null%> >
-            <label for="montoOrigen">Envias...</label>
-          </div>
+  
+    <div class="contenedor">
+      <div class="row">
+        <div class="col-md-4">
+          <h1><a href="/">CashNow</a> </h1>
+          <p>Welcome to CashNow</p>
         </div>
-        <div class="col-md">
-          <div class="form-floating">
-            <select class="form-select" id="metodoOrigen" aria-label="Floating label select example" name="origen">
-              <% metodos.forEach(metodo => { %>
-                <option value="<%= metodo.id %>"><%= metodo.name %> </option>
-              <% }) %>
-            </select>
-            <label for="metodoOrigen">Método</label>
-          </div>
+        <div class="col-md-8">
+          <form action="/valores" method="POST">
+            <div class="row g-2 my-3">
+              <div class="col-md-6">
+                <div class="selectbox">
+                  <div class="form-floating contenido-money">
+                    <input type="number" class="form-control money" id="montoOrigen" step="0.01" min=0 name="montoOrigen" value=<%= typeof old != 'undefined' ? old.montoOrigen : null%> >
+                    <label for="montoOrigen">Envias...</label>
+                  </div>
+                </div>
+               
+              </div>
+              <div class="col-md-6">
+                <div class="selectboxOrigen">
+                 
+                  <div class="select" id="selectOrigen">
+                    <div class="contenido-select">
+                      <img class="w-100" src="/images/<%= metodos[0].image %> " alt="">
+                      <div class="textos">
+                        <h4 class="titulo" data-id="<%= metodos[0].id %> " hidden ><%= metodos[0].name %></h4>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="opciones" id="opcionesOrigen">
+                   
+                    <% metodos.forEach(metodo => { %>
+                    <a href="#" class="opcion">
+                      <div class="contenido-opcion">
+                        <img class="w-100" src="/images/<%= metodo.image %> " alt="">
+                        <div class="textos">
+                          <h4 class="titulo" data-id="<%= metodo.id %> " hidden ><%= metodo.name %></h4>
+                        </div>
+                      </div>
+                    </a>
+                    <% }) %>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-2">
+              <div class="col-md-6">
+                <div class="selectbox">
+                  <div class="form-floating contenido-money">
+                  <input type="number" class="form-control money" id="montoDestino" name="montoDestino" step="0.01" min=0>
+                  <label for="montoDestino">Recibís...</label>
+                </div>
+              </div>
+            </div>
+
+              <div class="col-md-6">
+                <div class="selectboxDestino">
+                 
+                  <div class="select" id="selectDestino">
+                    <div class="contenido-select">
+                      <img class="w-100" src="/images/<%= metodos[6].image %> " alt="">
+                      <div class="textos">
+                        <h4 class="titulo" data-id="<%= metodos[6].id %>" hidden ><%= metodos[6].name %></h4>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="opciones" id="opcionesDestino">
+                   
+                    <% metodos.forEach(metodo => { %>
+                    <a href="#" class="opcion">
+                      <div class="contenido-opcion">
+                        <img class="w-100" src="/images/<%= metodo.image %> " alt="">
+                        <div class="textos">
+                          <h4 class="titulo" data-id="<%= metodo.id %>" hidden ><%= metodo.name %></h4>
+                        </div>
+                      </div>
+                    </a>
+                    <% }) %>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="origen" id="metodoOrigen" value="<%= metodos[0].id %> ">
+            <input type="hidden" name="destino" id="metodoDestino" value="<%= metodos[6].id %> ">
+            <span class="text-danger" id="msgError"></span>
+
+          </form>
         </div>
       </div>
-      <div class="row g-2">
-        <div class="col-md">
-          <div class="form-floating">
-            <input type="number" class="form-control" id="montoDestino" name="montoDestino" step="0.01" min=0>
-            <label for="montoDestino">Recibís...</label>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="form-floating">
-            <select class="form-select" id="metodoDestino" aria-label="Floating label select example" name="destino">
-              <% metodos.forEach(metodo => { %>
-                <option value="<%= metodo.id %>" <%= typeof old != 'undefined' && old.destino == metodo.id ? 'selected' : null  %> ><%= metodo.name %> </option>
-              <% }) %>
-            </select>
-            <label for="metodoDestino">Método</label>
-          </div>
-          <span class="text-danger" id="msgError"></span>
-        </div>
-      </div>
-    </form>
 
 
+  </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

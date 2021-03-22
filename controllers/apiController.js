@@ -24,8 +24,27 @@ module.exports = {
                 let comision = (montoOrigen * trans.perception) / 100;
                 let montoDestino = round(montoOrigen - comision);
                 res.json({
-                    montoDestino
+                    montoDestino,
+                    percepcion : trans.perception
                 })
             })
+    },
+    setValor:(req,res)=>{
+        const{montoDestino, origen, destino} = req.body;
+        db.Transaction.findOne({
+            where: {
+                source: origen,
+                target: destino
+            }
+        })
+            .then(trans => {
+                let porcentaje = 100 - trans.perception;
+                let montoOrigen = round(100 * montoDestino / porcentaje)
+                res.json(
+                    {
+                        montoOrigen
+                    })
+            })
     }
+
 }

@@ -5,13 +5,7 @@ const methods = [
     name : 'transferencia bancaria',
     currency: 1,
     label: 'CBU de la cuenta',
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name :'rapipago',
-    currency : 1,
-    label : 'alias',
+    image : 'transferencia.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -19,13 +13,7 @@ const methods = [
     name : 'pagoFacil',
     currency : 1,
     label:'alias',
-    createdAt : new Date,
-    updatedAt : new Date
-  },
-  {
-    name : 'cobroExpress',
-    currency : 1,
-    label: 'alias',
+    image : 'pagoFacil.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -33,6 +21,7 @@ const methods = [
     name: 'mercadoPago',
     currency : 1,
     label: 'nombre de usuario de mercado pago',
+    image : 'mercadoPago.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -40,6 +29,7 @@ const methods = [
     name : 'uala',
     currency : 1,
     label : 'nombre de usuario de uala',
+    image : 'uala.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -47,6 +37,7 @@ const methods = [
     name : 'bitcoin',
     currency : 2,
     label : 'codigo de bitcoin',
+    image : 'bitCoin.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -54,6 +45,7 @@ const methods = [
     name : 'transfEuros',
     currency : 3,
     label: 'codigo bancario europeo',
+    image : 'transfEuros.webp',
     createdAt : new Date,
     updatedAt : new Date
   },
@@ -61,6 +53,7 @@ const methods = [
     name : 'payPal',
     currency : 4,
     label: 'correo electronico de PayPal',
+    image : 'payPal.webp',
     createdAt : new Date,
     updatedAt : new Date
   }
